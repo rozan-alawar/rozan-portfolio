@@ -1,0 +1,487 @@
+/* ==========================================================================
+   COMPONENTS & REUSABLE UI ELEMENTS — LIGHT & VIBRANT THEME
+   ========================================================================== */
+
+/* Floating Glass Dynamic Dock Navbar */
+.site-header {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  height: 68px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Allows click-through outside dock */
+}
+
+.nav-wrapper {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 16px 8px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-full);
+  box-shadow: 
+    0 16px 40px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(2, 132, 199, 0.15),
+    0 0 30px rgba(2, 132, 199, 0.1);
+  transition: var(--transition-normal);
+  max-width: 1220px;
+  width: calc(100% - 48px);
+}
+
+.site-header.scrolled .nav-wrapper {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 
+    0 20px 50px rgba(15, 23, 42, 0.15),
+    0 0 0 1px rgba(2, 132, 199, 0.25),
+    0 0 40px rgba(244, 63, 94, 0.15);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.brand-avatar-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid var(--cyan-flutter);
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+  transition: var(--transition-fast);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-logo:hover .brand-avatar-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  border-color: var(--coral-accent);
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--cyan-flutter), var(--coral-accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+  transition: var(--transition-fast);
+}
+
+.brand-logo:hover .brand-icon {
+  transform: rotate(180deg) scale(1.08);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 4px;
+  border-radius: var(--radius-full);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--cyan-flutter);
+  background: rgba(2, 132, 199, 0.08);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--cyan-flutter), var(--blue-flutter));
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+}
+
+.nav-link.active::after {
+  display: none; /* Replaced traditional underline with floating capsule pill */
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-cta-mobile {
+  display: none;
+}
+
+/* Mobile Menu Toggle — hidden on desktop, shown at <=768px */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.menu-toggle:hover {
+  border-color: var(--cyan-flutter);
+  color: var(--cyan-flutter);
+}
+
+/* Availability Badge */
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-full);
+  color: #059669;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--emerald-success);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--emerald-success);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Button System — Cheerful Gradient & Crisp Shadows */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan-flutter) 0%, #0369a1 50%, var(--violet-accent) 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(2, 132, 199, 0.45);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: var(--cyan-flutter);
+  transform: translateY(-2px);
+  color: var(--cyan-flutter);
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* Official Store Badge Buttons */
+.store-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #000000;
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.store-badge-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: #0f172a;
+}
+
+.store-badge-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.store-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.store-badge-label {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.store-badge-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Cheerful Glassmorphism Card System */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  transition: var(--transition-normal);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  border-color: var(--cyan-flutter);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), var(--shadow-glow-cyan);
+  transform: translateY(-4px);
+}
+
+/* Tech Tag Pills */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(2, 132, 199, 0.06);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  color: var(--cyan-flutter);
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.tech-pill:hover {
+  border-color: var(--cyan-flutter);
+  color: #fff;
+  background: var(--cyan-flutter);
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--cyan-flutter);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+  outline: none;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Code Snippet Container — Crisp Dark Editor Slate Theme */
+.code-block {
+  background: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  font-family: var(--font-code);
+  font-size: 0.88rem;
+  color: #f8fafc;
+  overflow-x: auto;
+  line-height: 1.6;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+}
+
+.code-keyword { color: #f43f5e; }
+.code-type { color: #38bdf8; }
+.code-string { color: #34d399; }
+.code-function { color: #c084fc; }
+.code-comment { color: #64748b; font-style: italic; }
+
+/* Tech Stack Ecosystem Node Cards */
+.tech-node-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.tech-node-card:hover,
+.tech-node-card.active {
+  border-color: var(--cyan-flutter);
+  background: rgba(2, 132, 199, 0.04);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
+  transform: translateY(-2px);
+}
+
+.tech-node-icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tech-node-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.tech-node-category {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-code);
+}
+
+/* Pipeline Step Item Styles */
+.pipeline-step-item {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.pipeline-step-item:hover,
+.pipeline-step-item.active {
+  border-color: var(--cyan-flutter);
+  background: rgba(2, 132, 199, 0.05);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.12);
+  transform: translateX(4px);
+}
+
+.pipeline-num {
+  font-family: var(--font-code);
+  font-weight: 800;
+  color: var(--cyan-flutter);
+  font-size: 0.9rem;
+}
+
+.pipeline-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.pipeline-arrow {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+.pipeline-step-item.active .pipeline-arrow {
+  color: var(--cyan-flutter);
+}
+

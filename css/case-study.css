@@ -1,0 +1,327 @@
+/* ==========================================================================
+   CASE STUDY MODAL & SELECTED WORK STYLES — LIGHT & VIBRANT THEME
+   ========================================================================== */
+
+/* Project Showcase Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.project-card:hover {
+  border-color: var(--cyan-flutter);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08), 0 0 30px rgba(2, 132, 199, 0.12);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface-1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-badge-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.project-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.project-tagline {
+  font-size: 1rem;
+  color: var(--cyan-flutter);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.project-summary-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.project-summary-item strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.project-summary-item span {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.project-cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Modal Drawer Backdrop & Container — Modern Light Sheet */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-drawer {
+  width: 100%;
+  max-width: 900px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: -20px 0 60px rgba(15, 23, 42, 0.15);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 48px;
+  position: relative;
+}
+
+.modal-backdrop.active .modal-drawer {
+  transform: translateX(0);
+}
+
+.modal-close-btn {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--cyan-flutter);
+  color: #fff;
+}
+
+/* Case Study 9-Section Content Structure */
+.cs-header {
+  margin-bottom: 40px;
+}
+
+.cs-num-badge {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cyan-flutter);
+  margin-bottom: 8px;
+}
+
+.cs-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.cs-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.cs-banner-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 48px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Mandatory 9 Sections Format */
+.cs-section {
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.cs-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cs-section-num {
+  font-family: var(--font-code);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cyan-flutter);
+  background: rgba(2, 132, 199, 0.08);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.cs-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Interactive Architecture Visualizer */
+.arch-diagram-box {
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  margin: 24px 0;
+}
+
+.arch-node-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.arch-layer {
+  background: #ffffff;
+  border: 1px dashed rgba(2, 132, 199, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
+}
+
+.arch-layer-title {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cyan-flutter);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.arch-node {
+  background: #f1f5f9;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.arch-node:hover {
+  border-color: var(--cyan-flutter);
+  color: var(--cyan-flutter);
+  background: #ffffff;
+  transform: scale(1.02);
+}
+
+/* Impact Metrics Grid */
+.cs-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.cs-metric-card {
+  background: rgba(2, 132, 199, 0.04);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  text-align: center;
+}
+
+.cs-metric-value {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--cyan-flutter);
+  margin-bottom: 4px;
+}
+
+.cs-metric-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

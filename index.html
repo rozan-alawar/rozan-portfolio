@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rozan Abu Alawar — Senior Flutter & AI Product Engineer</title>
+  <meta name="description"
+    content="Portfolio of Rozan Abu Alawar, elite Female Flutter Developer & AI Product Engineer turning complex ideas into polished, production-ready mobile products.">
+  <meta name="keywords"
+    content="Flutter Developer, Flutter Developer Portfolio, Flutter App Developer, Mobile App Developer, Flutter Freelance Developer, AI Flutter Developer">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rozan Abu Alawar — Senior Flutter & AI Product Engineer">
+  <meta property="og:description"
+    content="I turn ideas into fast, beautiful and production-ready mobile applications. Explore case studies, clean architecture, and Flutter x AI apps.">
+  <meta property="og:image" content="https://rozanabualawar.com/assets/images/user_portrait_dark.jpg">
+  <meta property="og:url" content="https://rozanabualawar.com/">
+  <meta property="og:site_name" content="Rozan Abu Alawar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rozan Abu Alawar — Senior Flutter & AI Product Engineer">
+  <meta name="twitter:description"
+    content="I turn ideas into fast, beautiful and production-ready mobile applications. Explore case studies, clean architecture, and Flutter x AI apps.">
+  <meta name="twitter:image" content="https://rozanabualawar.com/assets/images/user_portrait_dark.jpg">
+
+  <!-- Indexing & Browser Chrome -->
+  <link rel="canonical" href="https://rozanabualawar.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rozan Abu Alawar">
+  <meta name="theme-color" content="#0284c7">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/user_avatar_logo.png">
+  <link rel="apple-touch-icon" href="assets/images/user_avatar_logo.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Ambient Mesh Background & Canvas -->
+  <div class="bg-mesh-pattern"></div>
+  <canvas id="hero-bg-canvas"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0;"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#home" class="brand-logo" aria-label="Rozan Abu Alawar Home">
+        <div class="brand-avatar-wrapper">
+          <img src="assets/images/user_avatar_logo.png" alt="Rozan Abu Alawar Avatar Logo" class="brand-avatar-img"
+            width="128" height="128" decoding="async" />
+        </div>
+        <span
+          style="font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem; color: var(--text-primary);">Rozan Abu Alawar</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#expertise" class="nav-link">Capabilities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="#contact" class="btn btn-primary nav-link">Start a Project</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>Available</span>
+        </div>
+        <button id="sfx-mute-btn" class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;"
+          aria-label="Toggle Sound Effects">Audio On</button>
+        <a href="#contact" class="btn btn-primary nav-cta-desktop"
+          style="padding: 8px 18px; font-size: 0.85rem;">Start a Project</a>
+        <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container hero-grid">
+
+      <!-- Hero Left Text Content -->
+      <div>
+        <div class="hero-badge-group">
+          <div class="hero-role-label">
+            <span class="pulse-dot"></span>
+            Flutter Developer & Mobile Engineer
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Architecting Mobile Apps<br>
+          <span class="gradient-text">Live on App Store & Google Play</span>
+        </h1>
+
+        <p class="hero-subtitle">
+           Flutter Developer specializing in Clean Architecture, Riverpod state management, and delivering
+          high-performance iOS & Android applications.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#work" class="btn btn-primary">View Production Apps →</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+
+        <div class="hero-name-label">
+          Featured Engineer: <span>Rozan Abu Alawar</span>
+        </div>
+      </div>
+
+      <!-- Interactive 3D/2D Visual Composition with Production Phone Emulator -->
+      <div class="hero-visual-composition">
+        <!-- Floating Code Card -->
+        <div class="floating-card floating-card-code">
+          <div
+            style="font-family: var(--font-code); font-size: 0.75rem; color: var(--cyan-flutter); margin-bottom: 4px;">
+            // Riverpod Provider</div>
+          <code style="font-family: var(--font-code); font-size: 0.8rem; color: #fff;">
+            final quranProvider = StateNotifierProvider((ref) => MushafNotifier());
+          </code>
+        </div>
+
+        <!-- Central Interactive Phone Simulator -->
+        <div class="phone-mockup-frame">
+          <div class="phone-header">
+            <span>09:41</span>
+            <div class="phone-notch"></div>
+            <span>5G ⚡</span>
+          </div>
+
+          <div class="phone-screen-content">
+            <div class="sim-header">
+              <span class="sim-title">Mushaf Qatar</span>
+              <div class="sim-tab-group">
+                <button class="sim-tab-btn active">Read</button>
+                <button class="sim-tab-btn">Audio</button>
+              </div>
+            </div>
+
+            <div class="sim-metric-card">
+              <div style="font-size: 0.7rem; color: var(--text-muted);">OFFICIAL QURAN ENGINE</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: var(--cyan-flutter);">604 High-Res Pages</div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px;">Tajweed Color Coding •
+                Offline Page Cache</div>
+            </div>
+
+            <div class="sim-metric-card"
+              style="background: rgba(2, 132, 199, 0.08); border-color: rgba(2, 132, 199, 0.2);">
+              <div style="font-size: 0.7rem; color: var(--cyan-flutter);">AUDIO STREAMING PLAYER</div>
+              <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 700;">Surah Al-Fatihah • Reciter
+                Library</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Synchronized Verse
+                Highlighting</div>
+            </div>
+
+            <button class="sim-action-btn" onclick="openCaseStudy('mushaf-qatar')">View Flagship App →</button>
+          </div>
+        </div>
+
+        <!-- Floating AI Node Card -->
+        <div class="floating-card floating-card-ai">
+          <div
+            style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--emerald-success);">
+            <span class="pulse-dot"></span> Clean Architecture
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Zero-Jank 60 FPS • Impeller Engine
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section (Placed Prominently at the Beginning) -->
+  <section id="about"
+    style="padding: 100px 0; background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+
+      <!-- Developer Personal Profile Header -->
+      <div
+        style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; margin-bottom: 80px;">
+        <div style="position: relative;">
+          <div
+            style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--cyan-flutter); box-shadow: 0 0 35px rgba(0, 210, 255, 0.25);">
+            <img id="about-portrait-img" src="assets/images/user_portrait_original.jpg"
+              alt="Rozan Abu Alawar Studio Portrait"
+              style="width: 100%; display: block; object-fit: cover; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
+            <div
+              style="position: absolute; bottom: 16px; left: 16px; right: 16px; backdrop-filter: blur(12px); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700; color: #fff;">Rozan Abu Alawar</div>
+                <div style="font-size: 0.75rem; color: var(--cyan-flutter);">Flutter Developer · Software Engineer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="section-tag">Developer Profile</span>
+          <h2 class="section-title">Turning Ideas Into Polished Digital Products</h2>
+          <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
+            Hi, I'm <strong>Rozan Abu Alawar</strong>. a Flutter developer building mobile apps that reach real users,
+            not just repos.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 32px;">
+            My work is live on the App Store and Google Play.
+
+            I work at the intersection of clean architecture, accessibility,
+            and practical AI integration — building apps that hold up under
+            government review, weak networks, and daily use. </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#contact" class="btn btn-primary">Start a Project</a>
+            <button class="btn btn-secondary" onclick="copyEmailToClipboard()" id="copy-email-btn">Copy Email
+              📋</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy Quote -->
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 64px;">
+        <span class="section-tag">Core Philosophy</span>
+        <h2 class="section-title" style="font-size: 2rem;">
+          "Software is more than code.<br>
+          It's about turning a real problem into a product people can actually use."
+        </h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          My structured 5-step approach ensures every mobile product delivers long-term technical value.
+        </p>
+      </div>
+
+      <!-- 5-Step Approach Timeline Cards -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+        <div class="glass-card" style="padding: 24px 16px; text-align: center;">
+          <div style="font-family: var(--font-code); color: var(--cyan-flutter); font-weight: 700; margin-bottom: 8px;">
+            01</div>
+          <h3 style="font-size: 1rem; color: #fff; margin-bottom: 8px;">Understand</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Deconstruct core business problem & user goals.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px 16px; text-align: center;">
+          <div style="font-family: var(--font-code); color: var(--cyan-flutter); font-weight: 700; margin-bottom: 8px;">
+            02</div>
+          <h3 style="font-size: 1rem; color: #fff; margin-bottom: 8px;">Design</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Craft modern design system tokens &
+            micro-interactions.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px 16px; text-align: center;">
+          <div style="font-family: var(--font-code); color: var(--cyan-flutter); font-weight: 700; margin-bottom: 8px;">
+            03</div>
+          <h3 style="font-size: 1rem; color: #fff; margin-bottom: 8px;">Build</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Architect clean, scalable Flutter & Riverpod
+            codebases.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px 16px; text-align: center;">
+          <div style="font-family: var(--font-code); color: var(--cyan-flutter); font-weight: 700; margin-bottom: 8px;">
+            04</div>
+          <h3 style="font-size: 1rem; color: #fff; margin-bottom: 8px;">Test</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Verify unit coverage, widget states & zero-jank frame
+            rates.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px 16px; text-align: center;">
+          <div style="font-family: var(--font-code); color: var(--cyan-flutter); font-weight: 700; margin-bottom: 8px;">
+            05</div>
+          <h3 style="font-size: 1rem; color: #fff; margin-bottom: 8px;">Ship & Improve</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Automate CI/CD store deployments & feature iteration.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Selected Work (Projects & 9-Section Case Studies) -->
+  <section id="work" style="padding: 120px 0;">
+    <div class="container">
+      <div style="margin-bottom: 64px;">
+        <span class="section-tag">Featured Portfolio</span>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-subtitle">Real products. Real problems. Thoughtful engineering.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Flagship Project Card 1: Mushaf Qatar (Minimal, Short Summary & Store Links Only) -->
+        <article class="glass-card"
+          style="grid-column: span 2; padding: 48px; border: 1px solid rgba(2, 132, 199, 0.18); box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06); border-radius: var(--radius-lg); margin-bottom: 12px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+
+            <!-- Left Side: Clean Image Mockup Container -->
+            <div
+              style="position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1); border: 1px solid rgba(15, 23, 42, 0.08);">
+              <img src="assets/images/mushaf_qatar.jpg" alt="Mushaf Qatar Preview"
+                style="width: 100%; height: 380px; object-fit: cover; object-position: center top; display: block;" loading="lazy" decoding="async" width="1024" height="682" />
+            </div>
+
+            <!-- Right Side: Clean Short Summary & Store Links Only -->
+            <div>
+              <span class="section-tag" style="margin-bottom: 12px;">Official Government Platform</span>
+
+              <h3
+                style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; line-height: 1.2;">
+                Mushaf Qatar
+              </h3>
+
+              <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px;">
+                The official Quran application for the Ministry of Endowments and Islamic Affairs in Qatar (iOS &
+                Android), featuring high-resolution manuscript rendering, multi-reciter audio, AI Quranic assistant, and
+                daily worship tools.
+              </p>
+
+              <!-- Store Links & Action Button -->
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+                <a href="https://apps.apple.com/us/app/mushaf-qatar-%D9%85%D8%B5%D8%AD%D9%81-%D9%82%D8%B7%D8%B1/id500544210"
+                  target="_blank" rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 384 512" fill="currentColor">
+                    <path
+                      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-92.1-61.7-92.1zM286.7 93c28.2-34.7 24.8-76 23.4-89-25 1.5-57 17.4-73.4 36.4-17.2 19.8-25.2 52.4-22.3 84.7 28.5 2.3 57.3-15.1 72.3-32.1z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">Download on the</span>
+                    <span class="store-badge-name">App Store</span>
+                  </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.islamweb.ns.quran&hl=en" target="_blank"
+                  rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 512 512">
+                    <path fill="#410599"
+                      d="M325.8 256L68.7 413.2c-5.8 3.4-12.7 1.4-16.1-4.4-1.2-2.1-1.9-4.5-1.9-7V110.2c0-6.8 5.5-12.3 12.3-12.3 2.5 0 4.9.7 7 1.9L325.8 256z" />
+                    <path fill="#00C1FF"
+                      d="M68.7 97.9l224.2 135.2L105.7 39.3C87.6 22 58.7 34.8 58.7 59.8v37.9c0 2.5.7 4.9 1.9 7l8.1-6.8z" />
+                    <path fill="#00E676"
+                      d="M367.6 230.7l-41.8 25.3-32.9-32.9 32.9-32.9 41.8 25.3c10.8 6.5 10.8 28.7 0 35.2z" />
+                    <path fill="#FFD600"
+                      d="M292.9 223.1L68.7 414.1c-2.1 1.2-4.5 1.9-7 1.9-25 0-37.8-28.9-20.5-47l187.2-193.8 64.5 47.9z" />
+                    <path fill="#FF3D00"
+                      d="M325.8 256L68.7 97.9c-2.1-1.2-4.5-1.9-7-1.9C36.7 96 23.9 124.9 41.2 143l187.2 193.8L325.8 256z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">GET IT ON</span>
+                    <span class="store-badge-name">Google Play</span>
+                  </div>
+                </a>
+                <button class="btn btn-secondary" onclick="openCaseStudy('mushaf-qatar')" style="padding: 12px 20px;">
+                  View Details →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Flagship Project Card 2: Amal App (Minimal, Short Summary & Store Links Only) -->
+        <article class="glass-card"
+          style="grid-column: span 2; padding: 48px; border: 1px solid rgba(2, 132, 199, 0.18); box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06); border-radius: var(--radius-lg);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+
+            <!-- Left Side: Clean Image Mockup Container -->
+            <div
+              style="position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1); border: 1px solid rgba(15, 23, 42, 0.08);">
+              <img src="assets/images/gaza_hope_main.jpg" alt="Amal App Preview"
+                style="width: 100%; height: 380px; object-fit: cover; object-position: center top; display: block;" loading="lazy" decoding="async" width="1400" height="726" />
+            </div>
+
+            <!-- Right Side: Clean Short Summary & Store Links Only -->
+            <div>
+              <span class="section-tag" style="margin-bottom: 12px;">Featured Mobile Platform</span>
+
+              <h3
+                style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; line-height: 1.2;">
+                Amal App
+              </h3>
+
+              <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px;">
+                An innovative humanitarian mobile application on iOS & Android connecting displaced individuals and
+                visually impaired citizens with aid services through a 100% eyes-free dual-language voice control
+                engine.
+              </p>
+
+              <!-- Store Links & Action Button -->
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+                <a href="https://apps.apple.com/us/app/amal-app-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%A3%D9%85%D9%84/id6748066867"
+                  target="_blank" rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 384 512" fill="currentColor">
+                    <path
+                      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-92.1-61.7-92.1zM286.7 93c28.2-34.7 24.8-76 23.4-89-25 1.5-57 17.4-73.4 36.4-17.2 19.8-25.2 52.4-22.3 84.7 28.5 2.3 57.3-15.1 72.3-32.1z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">Download on the</span>
+                    <span class="store-badge-name">App Store</span>
+                  </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.wac_gaza_hope.gbv&hl=en" target="_blank"
+                  rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 512 512">
+                    <path fill="#410599"
+                      d="M325.8 256L68.7 413.2c-5.8 3.4-12.7 1.4-16.1-4.4-1.2-2.1-1.9-4.5-1.9-7V110.2c0-6.8 5.5-12.3 12.3-12.3 2.5 0 4.9.7 7 1.9L325.8 256z" />
+                    <path fill="#00C1FF"
+                      d="M68.7 97.9l224.2 135.2L105.7 39.3C87.6 22 58.7 34.8 58.7 59.8v37.9c0 2.5.7 4.9 1.9 7l8.1-6.8z" />
+                    <path fill="#00E676"
+                      d="M367.6 230.7l-41.8 25.3-32.9-32.9 32.9-32.9 41.8 25.3c10.8 6.5 10.8 28.7 0 35.2z" />
+                    <path fill="#FFD600"
+                      d="M292.9 223.1L68.7 414.1c-2.1 1.2-4.5 1.9-7 1.9-25 0-37.8-28.9-20.5-47l187.2-193.8 64.5 47.9z" />
+                    <path fill="#FF3D00"
+                      d="M325.8 256L68.7 97.9c-2.1-1.2-4.5-1.9-7-1.9C36.7 96 23.9 124.9 41.2 143l187.2 193.8L325.8 256z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">GET IT ON</span>
+                    <span class="store-badge-name">Google Play</span>
+                  </div>
+                </a>
+                <button class="btn btn-secondary" onclick="openCaseStudy('gaza-hope')" style="padding: 12px 20px;">
+                  View Details →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Flagship Project Card 3: Hisn Al-Muslim (Minimal, Short Summary & Store Links Only) -->
+        <article class="glass-card"
+          style="grid-column: span 2; padding: 48px; border: 1px solid rgba(2, 132, 199, 0.18); box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06); border-radius: var(--radius-lg); margin-top: 12px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+
+            <!-- Left Side: Clean Image Mockup Container -->
+            <div
+              style="position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1); border: 1px solid rgba(15, 23, 42, 0.08);">
+              <img src="assets/images/hisn_almuslim.jpg" alt="Hisn Al-Muslim Preview"
+                style="width: 100%; height: 380px; object-fit: cover; object-position: center top; display: block;" loading="lazy" decoding="async" width="1024" height="682" />
+            </div>
+
+            <!-- Right Side: Clean Short Summary & Store Links Only -->
+            <div>
+              <span class="section-tag" style="margin-bottom: 12px;">Daily Supplication Platform</span>
+
+              <h3
+                style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; line-height: 1.2;">
+                Hisn Al-Muslim
+              </h3>
+
+              <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px;">
+                A comprehensive Islamic supplication and remembrance application on iOS & Android, designed to help
+                users build and track daily morning and evening Athkar habits.
+              </p>
+
+              <!-- Store Links & Action Button -->
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+                <a href="https://apps.apple.com/us/app/%D8%AD%D8%B5%D9%86-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-%D8%A3%D8%B0%D9%83%D8%A7%D8%B1%D9%8A/id6761679344"
+                  target="_blank" rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 384 512" fill="currentColor">
+                    <path
+                      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-92.1-61.7-92.1zM286.7 93c28.2-34.7 24.8-76 23.4-89-25 1.5-57 17.4-73.4 36.4-17.2 19.8-25.2 52.4-22.3 84.7 28.5 2.3 57.3-15.1 72.3-32.1z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">Download on the</span>
+                    <span class="store-badge-name">App Store</span>
+                  </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.wepioners.hisnalmuslim&hl=ar" target="_blank"
+                  rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 512 512">
+                    <path fill="#410599"
+                      d="M325.8 256L68.7 413.2c-5.8 3.4-12.7 1.4-16.1-4.4-1.2-2.1-1.9-4.5-1.9-7V110.2c0-6.8 5.5-12.3 12.3-12.3 2.5 0 4.9.7 7 1.9L325.8 256z" />
+                    <path fill="#00C1FF"
+                      d="M68.7 97.9l224.2 135.2L105.7 39.3C87.6 22 58.7 34.8 58.7 59.8v37.9c0 2.5.7 4.9 1.9 7l8.1-6.8z" />
+                    <path fill="#00E676"
+                      d="M367.6 230.7l-41.8 25.3-32.9-32.9 32.9-32.9 41.8 25.3c10.8 6.5 10.8 28.7 0 35.2z" />
+                    <path fill="#FFD600"
+                      d="M292.9 223.1L68.7 414.1c-2.1 1.2-4.5 1.9-7 1.9-25 0-37.8-28.9-20.5-47l187.2-193.8 64.5 47.9z" />
+                    <path fill="#FF3D00"
+                      d="M325.8 256L68.7 97.9c-2.1-1.2-4.5-1.9-7-1.9C36.7 96 23.9 124.9 41.2 143l187.2 193.8L325.8 256z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">GET IT ON</span>
+                    <span class="store-badge-name">Google Play</span>
+                  </div>
+                </a>
+                <button class="btn btn-secondary" onclick="openCaseStudy('hisn-almuslim')" style="padding: 12px 20px;">
+                  View Details →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Flagship Project Card 4: Alsahaba Radio (Minimal, Short Summary & Store Links Only) -->
+        <article class="glass-card"
+          style="grid-column: span 2; padding: 48px; border: 1px solid rgba(2, 132, 199, 0.18); box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06); border-radius: var(--radius-lg); margin-top: 12px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+
+            <!-- Left Side: Clean Image Mockup Container -->
+            <div
+              style="position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1); border: 1px solid rgba(15, 23, 42, 0.08);">
+              <img src="assets/images/alsahaba_radio.jpg" alt="Alsahaba Radio Preview"
+                style="width: 100%; height: 380px; object-fit: cover; object-position: center top; display: block;" loading="lazy" decoding="async" width="1024" height="531" />
+            </div>
+
+            <!-- Right Side: Clean Short Summary & Store Links Only -->
+            <div>
+              <span class="section-tag" style="margin-bottom: 12px;">Live Audio Streaming Platform</span>
+
+              <h3
+                style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; line-height: 1.2;">
+                Alsahaba Radio
+              </h3>
+
+              <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px;">
+                A multi-platform Islamic audio application broadcasting Holy Quran and Sunnah streams live from Gaza (FM
+                99.6) with seamless audio controls and sleep timer.
+              </p>
+
+              <!-- Store Links & Action Button -->
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+                <a href="https://apps.apple.com/tt/app/%D8%A5%D8%B0%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%A7%D8%A8%D8%A9/id1627046327"
+                  target="_blank" rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 384 512" fill="currentColor">
+                    <path
+                      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-92.1-61.7-92.1zM286.7 93c28.2-34.7 24.8-76 23.4-89-25 1.5-57 17.4-73.4 36.4-17.2 19.8-25.2 52.4-22.3 84.7 28.5 2.3 57.3-15.1 72.3-32.1z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">Download on the</span>
+                    <span class="store-badge-name">App Store</span>
+                  </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.sahaba.radio&hl=ar" target="_blank"
+                  rel="noopener" class="store-badge-btn">
+                  <svg class="store-badge-icon" viewBox="0 0 512 512">
+                    <path fill="#410599"
+                      d="M325.8 256L68.7 413.2c-5.8 3.4-12.7 1.4-16.1-4.4-1.2-2.1-1.9-4.5-1.9-7V110.2c0-6.8 5.5-12.3 12.3-12.3 2.5 0 4.9.7 7 1.9L325.8 256z" />
+                    <path fill="#00C1FF"
+                      d="M68.7 97.9l224.2 135.2L105.7 39.3C87.6 22 58.7 34.8 58.7 59.8v37.9c0 2.5.7 4.9 1.9 7l8.1-6.8z" />
+                    <path fill="#00E676"
+                      d="M367.6 230.7l-41.8 25.3-32.9-32.9 32.9-32.9 41.8 25.3c10.8 6.5 10.8 28.7 0 35.2z" />
+                    <path fill="#FFD600"
+                      d="M292.9 223.1L68.7 414.1c-2.1 1.2-4.5 1.9-7 1.9-25 0-37.8-28.9-20.5-47l187.2-193.8 64.5 47.9z" />
+                    <path fill="#FF3D00"
+                      d="M325.8 256L68.7 97.9c-2.1-1.2-4.5-1.9-7-1.9C36.7 96 23.9 124.9 41.2 143l187.2 193.8L325.8 256z" />
+                  </svg>
+                  <div class="store-badge-text">
+                    <span class="store-badge-label">GET IT ON</span>
+                    <span class="store-badge-name">Google Play</span>
+                  </div>
+                </a>
+                <button class="btn btn-secondary" onclick="openCaseStudy('alsahaba-radio')" style="padding: 12px 20px;">
+                  View Details →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section (Ultra-Sleek & Concise) -->
+  <section id="expertise"
+    style="padding: 100px 0; background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="margin-bottom: 56px;">
+        <span class="section-tag">Technical Focus</span>
+        <h2 class="section-title">Core Capabilities</h2>
+        <p class="section-subtitle">Proven mobile engineering skills focused on quality, performance, and user
+          experience.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+        <div class="glass-card" style="padding: 32px;">
+          <h3
+            style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+            Architecture & State Management</h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">Building
+            maintainable modular Flutter codebases with strict layer separation and compile-safe reactive state flows.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tech-pill">Clean Architecture</span>
+            <span class="tech-pill">Riverpod 2.5</span>
+            <span class="tech-pill">Modular Features</span>
+            <span class="tech-pill">dart_mappable</span>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 32px;">
+          <h3
+            style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+            Responsive UI & Accessibility</h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">Designing
+            adaptive screen layouts, multi-language RTL support, custom display themes, and screen reader accessibility.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tech-pill">flutter_screenutil</span>
+            <span class="tech-pill">RTL Arabic / English</span>
+            <span class="tech-pill">Accessibility Themes</span>
+            <span class="tech-pill">60 FPS Rendering</span>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 32px;">
+          <h3
+            style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+            APIs, Maps & Speech Engines</h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">Connecting
+            REST APIs with auth interceptors, Google Maps SDK, offline SQLite caching, and voice command engines.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tech-pill">Dio Interceptors</span>
+            <span class="tech-pill">Google Maps SDK</span>
+            <span class="tech-pill">speech_to_text</span>
+            <span class="tech-pill">flutter_tts</span>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 32px;">
+          <h3
+            style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+            Production Backend & Deployment</h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">
+            Integrating Firebase production services, automated testing pipelines, and publishing live builds to iOS &
+            Android stores.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tech-pill">Firebase Suite</span>
+            <span class="tech-pill">Unit & Widget Testing</span>
+            <span class="tech-pill">iOS App Store</span>
+            <span class="tech-pill">Google Play Store</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact & Project Inquiry Section -->
+  <section id="contact"
+    style="padding: 120px 0; background: var(--bg-charcoal); border-top: 1px solid var(--border-subtle);">
+    <div class="container" style="max-width: 900px;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <span class="section-tag">Let's Work Together</span>
+        <h2 class="section-title">Have an idea worth building?</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">Tell me what you're building. Let's turn it into a product.
+        </p>
+      </div>
+
+      <div class="glass-card" style="padding: 48px;">
+        <div id="form-feedback-box" style="display: none;"></div>
+
+        <form id="project-inquiry-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name *</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Your Email *</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. sarah@startup.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-type" class="form-label">Project Type</label>
+            <select id="contact-type" name="projectType" class="form-select">
+              <option value="Full Flutter App Development">Full Flutter App Development</option>
+              <option value="Startup MVP Sprint">Startup MVP Sprint</option>
+              <option value="AI Integration & Flutter">AI Integration & Flutter</option>
+              <option value="Architecture Audit & Refactoring">Architecture Audit & Refactoring</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Tell me about your project *</label>
+            <textarea id="contact-message" name="message" class="form-textarea"
+              placeholder="What problem are you solving? What is your timeline?" required></textarea>
+          </div>
+
+          <!-- Anti-spam honeypot: hidden from humans, filled by bots -->
+          <input type="text" id="contact-website" name="_gotcha" tabindex="-1" autocomplete="off"
+            style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true">
+          <input type="hidden" name="_subject" value="New project inquiry from your portfolio">
+
+          <button type="submit" id="contact-submit-btn" class="btn btn-primary"
+            style="width: 100%; padding: 16px; font-size: 1.05rem;">
+            Start a Conversation
+          </button>
+        </form>
+
+        <div
+          style="display: flex; justify-content: center; gap: 32px; margin-top: 36px; pt-6; border-top: 1px solid var(--border-subtle);">
+          <a href="mailto:rosanalawer2002@gmail.com" style="color: var(--text-muted); text-decoration: none;"
+            class="nav-link">📧 rosanalawer2002@gmail.com</a>
+          <a href="https://github.com" target="_blank" rel="noopener"
+            style="color: var(--text-muted); text-decoration: none;" class="nav-link">🐙 GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener"
+            style="color: var(--text-muted); text-decoration: none;" class="nav-link">💼 LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Reader Modal -->
+  <div id="case-study-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Case Study Reader">
+    <div class="modal-drawer">
+      <button class="modal-close-btn" onclick="closeCaseStudy()" aria-label="Close Modal">✕</button>
+      <div id="modal-content-container">
+        <!-- Rendered dynamically by js/case-studies.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/hero-canvas.js"></script>
+  <script src="js/case-studies.js"></script>
+  <script src="js/tech-ecosystem.js"></script>
+  <script src="js/pipeline.js"></script>
+  <script src="js/ai-showcase.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN & ADAPTIVE LAYOUTS
+   ========================================================================== */
+
+/* Tablet Optimization (769px to 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 36px auto;
+  }
+
+  .hero-badge-group,
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-drawer {
+    max-width: 100%;
+    padding: 32px 24px;
+  }
+
+  .arch-node-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Mobile Layout Adaptation (<= 768px) */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--nav-height));
+    background: var(--bg-dark);
+    backdrop-filter: blur(24px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-normal);
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Primary CTA lives inside the opened menu on mobile */
+  .nav-menu .nav-cta-mobile {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .status-pill {
+    display: none; /* Hide status pill on small mobile screens to prevent overflow */
+  }
+
+  .hero-section {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: calc(var(--nav-height) + 56px);
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  /* Keep the nav to logo + burger on small screens; the CTA moves into the menu */
+  .nav-cta-desktop,
+  #sfx-mute-btn {
+    display: none;
+  }
+
+  .hero-visual-composition {
+    height: 480px;
+  }
+
+  .phone-mockup-frame {
+    width: 250px;
+    height: 460px;
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  .floating-card-code {
+    top: 10px;
+    left: -10px;
+    width: 180px;
+    font-size: 0.75rem;
+  }
+
+  .floating-card-ai {
+    bottom: 20px;
+    right: -10px;
+    width: 170px;
+  }
+
+  .floating-card-arch {
+    display: none; /* Hide third floating element on small screens to prevent clutter */
+  }
+
+  .cs-title {
+    font-size: 2rem;
+  }
+
+  .cs-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-banner-img {
+    height: 220px;
+  }
+}
+
+/* Large Desktop Displays (>= 1440px) */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: 4.8rem;
+  }
+
+  .phone-mockup-frame {
+    width: 320px;
+    height: 580px;
+  }
+}

@@ -57,21 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-// Photo View Toggle Helper (Studio Dark Cutout vs Workspace Original)
-let currentPhotoIsDark = true;
-function togglePortraitView() {
-  const img = document.getElementById('about-portrait-img');
-  if (!img) return;
-  
-  currentPhotoIsDark = !currentPhotoIsDark;
-  img.style.transform = 'scale(0.96)';
-  img.style.opacity = '0.5';
-
-  setTimeout(() => {
-    img.src = currentPhotoIsDark ? 'assets/images/user_portrait_dark.jpg' : 'assets/images/user_portrait_original.jpg';
-    img.style.transform = 'scale(1)';
-    img.style.opacity = '1';
-  }, 200);
-}
-

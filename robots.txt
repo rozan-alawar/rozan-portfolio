@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rozanabualawar.com/sitemap.xml
+Sitemap: https://rozan-pi.vercel.app/sitemap.xml

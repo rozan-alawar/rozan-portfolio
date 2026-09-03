@@ -23,6 +23,10 @@
     justify-content: center;
   }
 
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -88,9 +92,30 @@
   }
 
   .split-2col,
-  .form-row-2col {
+  .form-row-2col,
+  .capability-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Comfortable touch targets (Apple/Google both recommend ~44px) */
+  .menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px; /* under 16px iOS Safari zooms the page on focus */
   }
 
   /* About stays side-by-side on tablets; the portrait just narrows */
@@ -201,13 +226,41 @@
     display: none; /* Overlap the phone too heavily at this width */
   }
 
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .process-card-text {
+    font-size: 0.9rem;
+  }
+
+  /* 100-120px of vertical padding is a lot of empty scrolling on a phone */
+  section[id] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  #home {
+    padding-top: calc(var(--nav-height) + 40px) !important;
+  }
+
+  .section-title {
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 32px;
+  }
+
   .tech-pill {
-    font-size: 0.75rem;
-    padding: 5px 10px;
+    font-size: 0.8rem;
+    padding: 6px 11px;
   }
 
   .section-tag {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
+    padding: 6px 13px;
   }
 }
 

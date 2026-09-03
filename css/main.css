@@ -138,7 +138,7 @@ body {
   border: 1px solid rgba(2, 132, 199, 0.2);
   color: var(--cyan-flutter);
   font-family: var(--font-code);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 0.74rem + 0.2vw, 0.85rem);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -167,6 +167,11 @@ body {
   outline: 2px solid var(--cyan-flutter);
   outline-offset: 4px;
   border-radius: 4px;
+}
+
+/* Anchor targets must clear the fixed header when jumped to */
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
 }
 
 /* Reduced Motion Support */

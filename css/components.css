@@ -286,7 +286,7 @@
 }
 
 .store-badge-label {
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -365,6 +365,28 @@
 
 .form-row-2col {
   grid-template-columns: 1fr 1fr;
+}
+
+/* Process timeline and capability cards — column counts live here so
+   media queries can collapse them (inline styles cannot be overridden). */
+.process-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.process-card-text {
+  font-size: 0.8rem;
+}
+
+.capability-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Footer contact links: padded so each is a comfortable tap target */
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 8px;
 }
 
 /* Form Controls */

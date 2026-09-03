@@ -93,6 +93,12 @@
     gap: 32px;
   }
 
+  /* About stays side-by-side on tablets; the portrait just narrows */
+  .about-profile-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 36px;
+  }
+
   /* Keep the nav to logo + burger on small screens; the CTA moves into the menu */
   .nav-cta-desktop,
   #sfx-mute-btn {
@@ -166,6 +172,11 @@
   }
 
   /* Stacked, full-width CTAs are easier to hit than a cramped row */
+  .about-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;

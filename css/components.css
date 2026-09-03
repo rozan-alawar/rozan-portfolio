@@ -350,6 +350,17 @@
   grid-template-columns: 1fr 1fr;
 }
 
+/* About profile: portrait keeps its natural proportion, copy sits beside it */
+.about-profile-grid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+/* Keep the portrait a natural size instead of stretching to fill the column */
+.about-portrait-frame {
+  max-width: 380px;
+  width: 100%;
+}
+
 .form-row-2col {
   grid-template-columns: 1fr 1fr;
 }

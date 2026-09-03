@@ -100,7 +100,7 @@
   }
 
   .about-portrait-frame {
-    width: 240px;
+    width: 270px;
   }
 
   /* Keep the nav to logo + burger on small screens; the CTA moves into the menu */
@@ -221,7 +221,7 @@
   }
 
   .about-portrait-frame {
-    width: 260px;
+    width: 280px;
   }
 }
 

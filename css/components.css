@@ -359,7 +359,7 @@
 
 /* Keep the portrait a natural size instead of stretching to fill the column */
 .about-portrait-frame {
-  width: 300px;
+  width: 340px;
   max-width: 100%;
 }
 

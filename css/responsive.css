@@ -95,8 +95,12 @@
 
   /* About stays side-by-side on tablets; the portrait just narrows */
   .about-profile-grid {
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 36px;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+  }
+
+  .about-portrait-frame {
+    width: 240px;
   }
 
   /* Keep the nav to logo + burger on small screens; the CTA moves into the menu */
@@ -172,11 +176,6 @@
   }
 
   /* Stacked, full-width CTAs are easier to hit than a cramped row */
-  .about-profile-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;
@@ -209,6 +208,20 @@
 
   .section-tag {
     font-size: 0.7rem;
+  }
+}
+
+/* About: below ~600px the copy column gets too narrow to read, so stack */
+@media (max-width: 600px) {
+  .about-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about-portrait-frame {
+    width: 260px;
   }
 }
 

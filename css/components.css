@@ -352,13 +352,15 @@
 
 /* About profile: portrait keeps its natural proportion, copy sits beside it */
 .about-profile-grid {
-  grid-template-columns: 0.9fr 1.1fr;
+  /* Size the portrait column to the image itself so no dead space is left
+     between it and the copy. */
+  grid-template-columns: auto 1fr;
 }
 
 /* Keep the portrait a natural size instead of stretching to fill the column */
 .about-portrait-frame {
-  max-width: 380px;
-  width: 100%;
+  width: 300px;
+  max-width: 100%;
 }
 
 .form-row-2col {

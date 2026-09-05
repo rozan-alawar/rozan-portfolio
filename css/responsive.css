@@ -102,6 +102,31 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Nav bar: logo + name on one line, burger on the right */
+  .nav-wrapper {
+    width: 100%;
+    gap: 12px;
+    padding: 8px 12px 8px 14px;
+  }
+
+  .brand-logo {
+    min-width: 0; /* let the name truncate instead of stretching the bar */
+    gap: 10px;
+    min-height: 44px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-avatar-wrapper {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
   /* Comfortable touch targets (Apple/Google both recommend ~44px) */
   .menu-toggle {
     min-width: 44px;
@@ -224,6 +249,20 @@
   .floating-card-code,
   .floating-card-ai {
     display: none; /* Overlap the phone too heavily at this width */
+  }
+
+  .nav-wrapper {
+    gap: 8px;
+    padding: 6px 10px 6px 12px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-avatar-wrapper {
+    width: 34px;
+    height: 34px;
   }
 
   .process-grid {

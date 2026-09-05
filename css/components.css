@@ -69,6 +69,14 @@
   justify-content: center;
 }
 
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
 .brand-avatar-img {
   width: 100%;
   height: 100%;
@@ -533,3 +541,64 @@
   color: var(--cyan-flutter);
 }
 
+
+/* Direct Contact Channel Buttons — WhatsApp / Email / LinkedIn */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.contact-channel-btn {
+  width: 100%;
+  padding: 16px 26px;
+  font-size: 1.02rem;
+}
+
+.contact-channel-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #12b350 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.32);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.42);
+  color: #ffffff;
+}
+
+.btn-linkedin {
+  background: linear-gradient(135deg, #0a66c2 0%, #084d94 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(10, 102, 194, 0.32);
+}
+
+.btn-linkedin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(10, 102, 194, 0.42);
+  color: #ffffff;
+}
+
+.contact-channels-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.contact-channels-divider::before,
+.contact-channels-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}

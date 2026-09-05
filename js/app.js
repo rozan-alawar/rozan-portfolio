@@ -42,18 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Menu Toggle
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const isOpen = navMenu.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.innerHTML = isOpen ? '✕' : '☰';
+    function setMenu(open) {
+      navMenu.classList.toggle('active', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.innerHTML = open ? '✕' : '☰';
+    }
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setMenu(!navMenu.classList.contains('active'));
     });
 
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.innerHTML = '☰';
-      });
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    // Tapping outside the dropdown, or pressing Escape, dismisses it.
+    document.addEventListener('click', (e) => {
+      if (!navMenu.classList.contains('active')) return;
+      if (!navMenu.contains(e.target) && e.target !== menuToggle) setMenu(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) setMenu(false);
     });
   }
 });

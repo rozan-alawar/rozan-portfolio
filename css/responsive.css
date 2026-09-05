@@ -42,23 +42,98 @@
   }
 }
 
-/* Mobile & Tablet Layout Adaptation (<= 900px) */
-@media (max-width: 900px) {
+/* Between 901 and 1099px the page layout is still the tablet one, but the
+   full desktop nav (links + status pill + audio + CTA) no longer fits inside
+   the header pill and spills past its right edge. Use the burger there too. */
+@media (min-width: 901px) and (max-width: 1099px) {
+  .nav-wrapper {
+    position: relative;
+  }
+
   .nav-menu {
-    position: fixed;
-    top: var(--nav-height);
+    position: absolute;
+    top: calc(100% + 10px);
     left: 0;
-    width: 100vw;
-    height: calc(100vh - var(--nav-height));
-    background: var(--bg-dark);
-    backdrop-filter: blur(24px);
+    right: 0;
+    width: auto;
     flex-direction: column;
-    justify-content: center;
-    gap: 28px;
-    transform: translateY(-100%);
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.16);
+    transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
-    transition: var(--transition-normal);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: var(--radius-sm);
+    font-size: 1.05rem;
+  }
+
+  .nav-menu .nav-cta-mobile {
+    display: block;
+    margin-top: 6px;
+  }
+
+  .nav-menu .nav-cta-mobile .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-cta-desktop,
+  #sfx-mute-btn,
+  .status-pill {
+    display: none;
+  }
+}
+
+/* Mobile & Tablet Layout Adaptation (<= 900px) */
+@media (max-width: 900px) {
+  /* A dropdown card under the header pill — sized to its contents, not the
+     whole screen. The desktop pill's radius must be reset or it renders as
+     a blob at this width. */
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px;
+    background: #ffffff;
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.16);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .nav-menu.active {
@@ -70,11 +145,22 @@
   /* Primary CTA lives inside the opened menu on mobile */
   .nav-menu .nav-cta-mobile {
     display: block;
-    margin-top: 8px;
+    margin-top: 6px;
+  }
+
+  .nav-menu .nav-cta-mobile .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .nav-menu .nav-link {
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: var(--radius-sm);
+    font-size: 1.05rem;
   }
 
   .menu-toggle {
@@ -104,6 +190,7 @@
 
   /* Nav bar: logo + name on one line, burger on the right */
   .nav-wrapper {
+    position: relative; /* anchors the .nav-menu dropdown */
     width: 100%;
     gap: 12px;
     padding: 8px 12px 8px 14px;

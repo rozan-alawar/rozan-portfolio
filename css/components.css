@@ -397,6 +397,24 @@
   padding: 4px 8px;
 }
 
+/* Card padding lives here rather than inline so the mobile breakpoints can
+   reduce it — an inline style would outrank them. */
+.project-card,
+.contact-card {
+  padding: 48px;
+}
+
+/* Project screenshots are wide marketing shots. Cropping them to a fixed
+   380px box cut up to 44% off the sides in a narrow column, so fit the whole
+   image inside the box instead. */
+.project-media {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Form Controls */
 .form-group {
   margin-bottom: 24px;

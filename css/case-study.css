@@ -325,3 +325,233 @@
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+
+/* ==========================================================================
+   CASE STUDY NARRATIVE LAYOUT
+   Problem → engineering decisions → outcome → what shipped.
+   ========================================================================== */
+
+/* Role / platforms / client strip under the title. Answers the first question
+   a client asks about a big-name project: "what did she actually do here?" */
+.cs-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cs-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  background: rgba(2, 132, 199, 0.04);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  border-radius: var(--radius-sm);
+}
+
+.cs-fact-label {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.cs-fact-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Verified metrics only — the renderer omits this block entirely when every
+   metric is still marked pending. */
+.cs-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.cs-metric {
+  background: rgba(2, 132, 199, 0.04);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  text-align: center;
+}
+
+.cs-section-heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.cs-section-intro {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cs-body-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+/* The one-sentence statement of the hard problem, set apart from the context
+   paragraph so it lands on its own. */
+.cs-challenge {
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 3px solid var(--cyan-flutter);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cs-decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-decision {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 24px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.cs-decision:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-sm);
+}
+
+.cs-decision-index {
+  font-family: var(--font-code);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cyan-flutter);
+  line-height: 1.4;
+}
+
+.cs-decision-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.cs-decision-detail {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.cs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+/* ==========================================================================
+   PROJECT CARD CREDENTIAL STRIP (main page)
+   Role and verified store numbers, shown before the visitor has to click in.
+   ========================================================================== */
+.project-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.project-meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.project-meta-label {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.project-meta-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+}
+
+.testimonial-quote {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--cyan-flutter);
+  line-height: 0;
+  vertical-align: -0.15em;
+  margin-right: 4px;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.testimonial-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.testimonial-role {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}

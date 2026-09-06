@@ -179,9 +179,29 @@
 
   .split-2col,
   .form-row-2col,
-  .capability-grid {
+  .capability-grid,
+  .cs-features-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  /* Stack the decision number above its text rather than beside it */
+  .cs-decision {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px;
+  }
+
+  .project-card,
+  .contact-card {
+    padding: 28px 20px;
+  }
+
+  /* Full-width single column: let the image set its own height so there is
+     no letterboxing above and below it */
+  .project-media {
+    height: auto;
+    max-height: 60vh;
   }
 
   .process-grid {
@@ -308,8 +328,10 @@
     padding-right: 18px;
   }
 
-  .glass-card {
-    padding: 24px 18px;
+  .glass-card,
+  .project-card,
+  .contact-card {
+    padding: 22px 16px;
   }
 
   /* Stacked, full-width CTAs are easier to hit than a cramped row */

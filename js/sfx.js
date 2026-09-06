@@ -6,7 +6,22 @@
 class DeveloperAudioEngine {
   constructor() {
     this.audioCtx = null;
-    this.muted = false;
+    // Muted by default: a visitor opening the site from an office or a shared
+    // space should never get unexpected sound. Opting in is remembered.
+    this.muted = true;
+    try {
+      this.muted = localStorage.getItem('sfx-enabled') !== 'true';
+    } catch (e) {
+      /* Storage unavailable (private mode, blocked cookies) — stay muted. */
+    }
+  }
+
+  persistPreference() {
+    try {
+      localStorage.setItem('sfx-enabled', this.muted ? 'false' : 'true');
+    } catch (e) {
+      /* Preference simply won't survive a reload. */
+    }
   }
 
   initAudioContext() {
@@ -125,6 +140,7 @@ class DeveloperAudioEngine {
 
   toggleMute() {
     this.muted = !this.muted;
+    this.persistPreference();
     return this.muted;
   }
 }
@@ -134,9 +150,17 @@ const sfx = new DeveloperAudioEngine();
 document.addEventListener('DOMContentLoaded', () => {
   const muteBtn = document.getElementById('sfx-mute-btn');
   if (muteBtn) {
+    // Label reflects the action the button performs, and starts in sync with
+    // the stored preference rather than assuming sound is on.
+    const syncLabel = () => {
+      muteBtn.textContent = sfx.muted ? 'Sound Off' : 'Sound On';
+      muteBtn.setAttribute('aria-pressed', String(!sfx.muted));
+    };
+    syncLabel();
+
     muteBtn.addEventListener('click', () => {
-      const isMuted = sfx.toggleMute();
-      muteBtn.textContent = isMuted ? 'Audio Off' : 'Audio On';
+      sfx.toggleMute();
+      syncLabel();
     });
   }
 

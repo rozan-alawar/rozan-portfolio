@@ -150,22 +150,32 @@ const sfx = new DeveloperAudioEngine();
 document.addEventListener('DOMContentLoaded', () => {
   const muteBtn = document.getElementById('sfx-mute-btn');
   if (muteBtn) {
-    // Label reflects the action the button performs, and starts in sync with
-    // the stored preference rather than assuming sound is on.
+    // The button is icon-only: aria-pressed drives which icon CSS shows, and
+    // carries the state for screen readers. Never write textContent here — it
+    // would replace the inline SVGs.
     const syncLabel = () => {
-      muteBtn.textContent = sfx.muted ? 'Sound Off' : 'Sound On';
       muteBtn.setAttribute('aria-pressed', String(!sfx.muted));
+      const isArabic = document.documentElement.getAttribute('lang') === 'ar';
+      const label = sfx.muted
+        ? (isArabic ? 'تشغيل الصوت' : 'Turn sound on')
+        : (isArabic ? 'إيقاف الصوت' : 'Turn sound off');
+      muteBtn.setAttribute('aria-label', label);
+      muteBtn.setAttribute('data-en-aria-label', sfx.muted ? 'Turn sound on' : 'Turn sound off');
+      muteBtn.setAttribute('data-ar-aria-label', sfx.muted ? 'تشغيل الصوت' : 'إيقاف الصوت');
     };
     syncLabel();
 
     muteBtn.addEventListener('click', () => {
-      sfx.toggleMute();
+      sfx.toggleMute();  // persists internally
       syncLabel();
     });
+
+    // Keep the label in the right language when the visitor switches.
+    document.addEventListener('languagechange', syncLabel);
   }
 
   // Attach mechanical keyboard click to interactive elements
-  const keyElements = document.querySelectorAll('.nav-link, .tech-node-card, .sim-tab-btn, .pipeline-step-item, .tech-pill');
+  const keyElements = document.querySelectorAll('.nav-link, .sim-tab-btn, .tech-pill');
   keyElements.forEach(el => {
     el.addEventListener('mouseenter', () => sfx.playKeypressClick());
   });

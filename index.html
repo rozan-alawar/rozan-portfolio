@@ -54,11 +54,11 @@
   </script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css?v=202609061900">
-  <link rel="stylesheet" href="css/components.css?v=202609061900">
-  <link rel="stylesheet" href="css/hero.css?v=202609061900">
-  <link rel="stylesheet" href="css/case-study.css?v=202609061900">
-  <link rel="stylesheet" href="css/responsive.css?v=202609061900">
+  <link rel="stylesheet" href="css/main.css?v=202609062000">
+  <link rel="stylesheet" href="css/components.css?v=202609062000">
+  <link rel="stylesheet" href="css/hero.css?v=202609062000">
+  <link rel="stylesheet" href="css/case-study.css?v=202609062000">
+  <link rel="stylesheet" href="css/responsive.css?v=202609062000">
 </head>
 
 <body>
@@ -72,10 +72,13 @@
   <header class="site-header">
     <div class="container nav-wrapper">
       <a href="#home" class="nav-pill nav-pill-brand brand-logo" aria-label="Rozan Abu Alawar Home">
-        <div class="brand-avatar-wrapper">
-          <img src="assets/images/user_avatar_logo.png" alt="Rozan Abu Alawar Avatar Logo" class="brand-avatar-img"
-            width="128" height="128" decoding="async" />
-        </div>
+        <span class="brand-avatar-wrapper" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </span>
         <span class="brand-text">
           <span class="brand-name">Rozan Abu Alawar</span>
           <span class="brand-role" data-en="Flutter Developer" data-ar="مطوّرة Flutter">Flutter Developer</span>
@@ -108,12 +111,21 @@
         </button>
         <button class="pref-btn pref-btn-lang" data-lang-toggle type="button"
           aria-label="التبديل إلى العربية" title="Change language">ع</button>
-        <button id="sfx-mute-btn" class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;"
-          aria-label="Toggle Sound Effects" aria-pressed="false"
-          data-en="Sound Off" data-ar="الصوت مغلق">Sound Off</button>
-        <a href="#contact" class="btn btn-primary nav-cta-desktop"
-          style="padding: 8px 18px; font-size: 0.85rem;"
-          data-en="Start a Project" data-ar="ابدأ مشروعاً">Start a Project</a>
+        <button id="sfx-mute-btn" class="pref-btn" type="button" aria-pressed="false"
+          data-en-aria-label="Turn sound on" data-ar-aria-label="تشغيل الصوت"
+          aria-label="Turn sound on" title="Toggle sound">
+          <svg class="pref-icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <path d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13"/>
+          </svg>
+          <svg class="pref-icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="22" y1="9" x2="16" y2="15"/>
+            <line x1="16" y1="9" x2="22" y2="15"/>
+          </svg>
+        </button>
         <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
       </div>
     </div>
@@ -265,7 +277,7 @@
           </p>
 
           <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="#contact" class="btn btn-primary">Start a Project</a>
+            <a href="#contact" class="btn btn-primary" data-en="Start a Project" data-ar="ابدأ مشروعاً">Start a Project</a>
             <button class="btn btn-secondary" onclick="copyEmailToClipboard()" id="copy-email-btn">Copy Email
               📋</button>
           </div>
@@ -1057,12 +1069,12 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/preferences.js?v=202609061900"></script>
-  <script src="js/hero-canvas.js?v=202609061900"></script>
-  <script src="js/case-studies.js?v=202609061900"></script>
-  <script src="js/contact.js?v=202609061900"></script>
-  <script src="js/sfx.js?v=202609061900"></script>
-  <script src="js/app.js?v=202609061900"></script>
+  <script src="js/preferences.js?v=202609062000"></script>
+  <script src="js/hero-canvas.js?v=202609062000"></script>
+  <script src="js/case-studies.js?v=202609062000"></script>
+  <script src="js/contact.js?v=202609062000"></script>
+  <script src="js/sfx.js?v=202609062000"></script>
+  <script src="js/app.js?v=202609062000"></script>
 
 </body>
 

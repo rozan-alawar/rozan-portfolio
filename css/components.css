@@ -102,17 +102,22 @@
 }
 
 .brand-avatar-wrapper {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
   border-radius: 50%;
-  overflow: hidden;
-  border: 2.5px solid var(--cyan-flutter);
+  background: linear-gradient(135deg, var(--cyan-flutter), var(--blue-flutter));
+  color: var(--text-on-accent);
   box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
   transition: var(--transition-fast);
-  background: var(--surface-card);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.brand-avatar-wrapper svg {
+  width: 19px;
+  height: 19px;
 }
 
 .brand-name {
@@ -134,9 +139,8 @@
 }
 
 .brand-logo:hover .brand-avatar-wrapper {
-  transform: scale(1.1) rotate(5deg);
-  border-color: var(--coral-accent);
-  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
 }
 
 .brand-icon {
@@ -624,6 +628,13 @@
   font-weight: 800;
   line-height: 1;
 }
+
+/* Sound: muted by default, so the button offers "turn on". */
+.pref-icon-sound-on { display: block; }
+.pref-icon-sound-off { display: none; }
+
+#sfx-mute-btn[aria-pressed="true"] .pref-icon-sound-on { display: none; }
+#sfx-mute-btn[aria-pressed="true"] .pref-icon-sound-off { display: block; }
 
 /* Show the icon for the theme the button switches TO. */
 .pref-icon-moon { display: block; }

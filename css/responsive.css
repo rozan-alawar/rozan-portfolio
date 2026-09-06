@@ -46,6 +46,14 @@
    full desktop nav (links + status pill + audio + CTA) no longer fits inside
    the header pill and spills past its right edge. Use the burger there too. */
 @media (min-width: 901px) and (max-width: 1099px) {
+  .nav-pill-menu {
+    padding: 10px;
+    border-radius: var(--radius-lg);
+  }
+
+  .brand-role {
+    display: none;
+  }
   .nav-wrapper {
     position: relative;
   }
@@ -111,6 +119,27 @@
 
 /* Mobile & Tablet Layout Adaptation (<= 900px) */
 @media (max-width: 900px) {
+
+  /* On mobile the menu pill becomes a dropdown, so it must not keep the
+     desktop pill's inline layout or shadow. */
+  .nav-pill-menu {
+    padding: 10px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Brand pill shrinks; the role line is dropped to save width. */
+  .nav-pill-brand {
+    padding: 6px 14px 6px 6px;
+  }
+
+  .brand-role {
+    display: none;
+  }
+
+  .nav-pill-actions {
+    padding: 6px;
+    gap: 6px;
+  }
   /* A dropdown card under the header pill — sized to its contents, not the
      whole screen. The desktop pill's radius must be reset or it renders as
      a blob at this width. */
@@ -121,6 +150,8 @@
     right: 0;
     width: auto;
     height: auto;
+    max-height: calc(100vh - var(--nav-height) - 40px);
+    overflow-y: auto;
     flex-direction: column;
     align-items: stretch;
     gap: 2px;
@@ -211,9 +242,8 @@
   /* Nav bar: logo + name on one line, burger on the right */
   .nav-wrapper {
     position: relative; /* anchors the .nav-menu dropdown */
-    width: 100%;
-    gap: 12px;
-    padding: 8px 12px 8px 14px;
+    width: calc(100% - 32px);
+    gap: 10px;
   }
 
   .brand-logo {
@@ -510,4 +540,19 @@
 [dir="rtl"] .arrow-ltr {
   display: inline-block;
   transform: scaleX(-1);
+}
+
+/* Header pills: the brand leads on the right in RTL, preferences on the left.
+   The DOM order stays brand → menu → actions; flex-direction does the flip. */
+[dir="rtl"] .nav-wrapper {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-pill-brand {
+  padding: 7px 8px 7px 20px;
+}
+
+[dir="rtl"] .brand-name,
+[dir="rtl"] .brand-role {
+  text-align: right;
 }

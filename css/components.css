@@ -15,44 +15,90 @@
   pointer-events: none; /* Allows click-through outside dock */
 }
 
+/* Three separate floating pills: brand · nav tabs · preferences.
+   The wrapper only positions them; each pill carries its own glass surface. */
 .nav-wrapper {
-  pointer-events: auto;
+  pointer-events: none; /* gaps between pills stay click-through */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 8px 16px 8px 24px;
+  gap: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  max-width: 1220px;
+  width: calc(100% - 48px);
+}
+
+/* Shared glass treatment for each of the three pills. */
+.nav-pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
   background: var(--bg-surface-glass);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-full);
-  box-shadow: 
+  box-shadow:
     0 16px 40px rgba(15, 23, 42, 0.12),
     0 0 0 1px rgba(2, 132, 199, 0.15),
     0 0 30px rgba(2, 132, 199, 0.1);
   transition: var(--transition-normal);
-  max-width: 1220px;
-  width: calc(100% - 48px);
 }
 
-.site-header.scrolled .nav-wrapper {
-  background: var(--bg-surface-glass);
-  box-shadow: 
+.site-header.scrolled .nav-pill {
+  box-shadow:
     0 20px 50px rgba(15, 23, 42, 0.15),
     0 0 0 1px rgba(2, 132, 199, 0.25),
     0 0 40px rgba(244, 63, 94, 0.15);
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
+/* Left pill — brand. Sits first in the DOM so it leads in both directions. */
+.nav-pill-brand {
   gap: 12px;
+  padding: 7px 20px 7px 8px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* Centre pill — section tabs. */
+.nav-pill-menu {
+  gap: 4px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+/* Right pill — theme, language, and the primary CTA. */
+.nav-pill-actions {
+  gap: 10px;
+  padding: 7px 8px;
+  flex-shrink: 0;
+}
+
+.brand-logo {
   text-decoration: none;
   color: var(--text-primary);
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.15rem;
+}
+
+/* Name over role, matching the avatar height. */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.brand-role {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-avatar-wrapper {
@@ -72,9 +118,12 @@
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.2;
   color: var(--text-primary);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-avatar-img {
@@ -111,13 +160,8 @@
 }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
   gap: 4px;
   list-style: none;
-  background: var(--surface-inset);
-  padding: 4px;
-  border-radius: var(--radius-full);
 }
 
 .nav-link {
@@ -150,9 +194,7 @@
 }
 
 .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-cta-mobile {

@@ -10,8 +10,8 @@
 }
 
 .project-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: var(--transition-normal);
@@ -79,11 +79,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  background: #f8fafc;
+  background: var(--surface-inset);
   border-radius: var(--radius-sm);
   padding: 16px;
   margin-bottom: 20px;
-  border: 1px solid rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--border-subtle);
 }
 
 .project-summary-item strong {
@@ -139,8 +139,8 @@
   width: 100%;
   max-width: 900px;
   height: 100vh;
-  background: #ffffff;
-  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--surface-card);
+  border-left: 1px solid var(--border-subtle);
   box-shadow: -20px 0 60px rgba(15, 23, 42, 0.15);
   overflow-y: auto;
   transform: translateX(100%);
@@ -160,8 +160,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #f1f5f9;
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   font-size: 1.2rem;
   cursor: pointer;
@@ -210,14 +210,14 @@
   object-fit: cover;
   border-radius: var(--radius-md);
   margin-bottom: 48px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border-subtle);
 }
 
 /* Mandatory 9 Sections Format */
 .cs-section {
   margin-bottom: 48px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .cs-section-header {

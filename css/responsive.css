@@ -60,7 +60,7 @@
     align-items: stretch;
     gap: 2px;
     padding: 10px;
-    background: #ffffff;
+    background: var(--surface-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     box-shadow: 0 18px 44px rgba(15, 23, 42, 0.16);
@@ -125,7 +125,7 @@
     align-items: stretch;
     gap: 2px;
     padding: 10px;
-    background: #ffffff;
+    background: var(--surface-card);
     backdrop-filter: blur(24px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
@@ -432,4 +432,82 @@
     width: 320px;
     height: 580px;
   }
+}
+
+
+/* ==========================================================================
+   RTL / ARABIC
+   Logical properties would avoid most of this, but the codebase uses physical
+   left/right in inline styles, so the flips are declared explicitly.
+   ========================================================================== */
+[dir="rtl"] body {
+  font-family: 'Tajawal', 'Inter', -apple-system, sans-serif;
+}
+
+[dir="rtl"] .hero-title,
+[dir="rtl"] .section-title,
+[dir="rtl"] .cs-title,
+[dir="rtl"] .brand-name,
+[dir="rtl"] .service-name,
+[dir="rtl"] .workflow-title,
+[dir="rtl"] .cs-section-heading,
+[dir="rtl"] .cs-decision-title {
+  font-family: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Latin-only elements keep their original face and direction. */
+[dir="rtl"] .store-badge-btn,
+[dir="rtl"] .tech-pill,
+[dir="rtl"] .floating-card-code,
+[dir="rtl"] .code-block {
+  direction: ltr;
+  font-family: var(--font-code);
+}
+
+[dir="rtl"] .store-badge-text {
+  text-align: left;
+}
+
+/* Accent bars and bullet rails move to the right edge. */
+[dir="rtl"] .cs-challenge,
+[dir="rtl"] .service-fit {
+  padding-left: 0;
+  padding-right: 14px;
+  border-left: none;
+  border-right: 3px solid var(--cyan-flutter);
+}
+
+[dir="rtl"] .service-deliverables li {
+  padding-left: 0;
+  padding-right: 22px;
+}
+
+[dir="rtl"] .service-deliverables li::before {
+  left: auto;
+  right: 0;
+}
+
+/* The case study drawer slides in from the left in RTL. */
+[dir="rtl"] .modal-backdrop {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .modal-drawer {
+  border-left: none;
+  border-right: 1px solid var(--border-subtle);
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .modal-backdrop.active .modal-drawer {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .modal-close-btn {
+  float: left;
+}
+
+/* Directional glyphs in copy would point the wrong way in RTL. */
+[dir="rtl"] .arrow-ltr {
+  display: inline-block;
+  transform: scaleX(-1);
 }

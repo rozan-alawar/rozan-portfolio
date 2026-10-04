@@ -15,66 +15,120 @@
   pointer-events: none; /* Allows click-through outside dock */
 }
 
+/* Three separate floating pills: brand · nav tabs · preferences.
+   The wrapper only positions them; each pill carries its own glass surface. */
 .nav-wrapper {
-  pointer-events: auto;
+  pointer-events: none; /* gaps between pills stay click-through */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 8px 16px 8px 24px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  border-radius: var(--radius-full);
-  box-shadow: 
-    0 16px 40px rgba(15, 23, 42, 0.12),
-    0 0 0 1px rgba(2, 132, 199, 0.15),
-    0 0 30px rgba(2, 132, 199, 0.1);
-  transition: var(--transition-normal);
+  gap: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
   max-width: 1220px;
   width: calc(100% - 48px);
 }
 
-.site-header.scrolled .nav-wrapper {
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 
+/* Shared glass treatment for each of the three pills. */
+.nav-pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-full);
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(2, 132, 199, 0.15),
+    0 0 30px rgba(2, 132, 199, 0.1);
+  transition: var(--transition-normal);
+}
+
+.site-header.scrolled .nav-pill {
+  box-shadow:
     0 20px 50px rgba(15, 23, 42, 0.15),
     0 0 0 1px rgba(2, 132, 199, 0.25),
     0 0 40px rgba(244, 63, 94, 0.15);
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
+/* Left pill — brand. Sits first in the DOM so it leads in both directions. */
+.nav-pill-brand {
   gap: 12px;
+  padding: 7px 20px 7px 8px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* Centre pill — section tabs. */
+.nav-pill-menu {
+  gap: 4px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+/* Right pill — theme, language, and the primary CTA. */
+.nav-pill-actions {
+  gap: 10px;
+  padding: 7px 8px;
+  flex-shrink: 0;
+}
+
+.brand-logo {
   text-decoration: none;
   color: var(--text-primary);
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.15rem;
+}
+
+/* Name over role, matching the avatar height. */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.brand-role {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-avatar-wrapper {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
   border-radius: 50%;
-  overflow: hidden;
-  border: 2.5px solid var(--cyan-flutter);
+  background: linear-gradient(135deg, var(--cyan-flutter), var(--blue-flutter));
+  color: var(--text-on-accent);
   box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
   transition: var(--transition-fast);
-  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.brand-avatar-wrapper svg {
+  width: 19px;
+  height: 19px;
+}
+
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.2;
   color: var(--text-primary);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-avatar-img {
@@ -85,9 +139,8 @@
 }
 
 .brand-logo:hover .brand-avatar-wrapper {
-  transform: scale(1.1) rotate(5deg);
-  border-color: var(--coral-accent);
-  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
 }
 
 .brand-icon {
@@ -111,13 +164,8 @@
 }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
   gap: 4px;
   list-style: none;
-  background: rgba(15, 23, 42, 0.04);
-  padding: 4px;
-  border-radius: var(--radius-full);
 }
 
 .nav-link {
@@ -150,9 +198,7 @@
 }
 
 .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-cta-mobile {
@@ -238,14 +284,14 @@
 }
 
 .btn-secondary {
-  background: #ffffff;
+  background: var(--surface-card);
   color: var(--text-primary);
   border: 1px solid var(--border-subtle);
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
 }
 
 .btn-secondary:hover {
-  background: #f8fafc;
+  background: var(--surface-inset);
   border-color: var(--cyan-flutter);
   transform: translateY(-2px);
   color: var(--cyan-flutter);
@@ -277,7 +323,7 @@
 .store-badge-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  background: #0f172a;
+  background: var(--surface-invert);
 }
 
 .store-badge-icon {
@@ -309,10 +355,10 @@
 
 /* Cheerful Glassmorphism Card System */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--bg-surface-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   padding: 32px;
   transition: var(--transition-normal);
@@ -397,6 +443,24 @@
   padding: 4px 8px;
 }
 
+/* Card padding lives here rather than inline so the mobile breakpoints can
+   reduce it — an inline style would outrank them. */
+.project-card,
+.contact-card {
+  padding: 48px;
+}
+
+/* Project screenshots are wide marketing shots. Cropping them to a fixed
+   380px box cut up to 44% off the sides in a narrow column, so fit the whole
+   image inside the box instead. */
+.project-media {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Form Controls */
 .form-group {
   margin-bottom: 24px;
@@ -415,14 +479,22 @@
 .form-textarea {
   width: 100%;
   padding: 14px 18px;
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.95rem;
   transition: var(--transition-fast);
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+/* Placeholder contrast is set explicitly — the browser default is tuned for
+   light backgrounds and washes out on the dark theme. */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-dim);
+  opacity: 1;
 }
 
 .form-input:focus,
@@ -440,13 +512,13 @@
 
 /* Code Snippet Container — Crisp Dark Editor Slate Theme */
 .code-block {
-  background: #0f172a;
+  background: var(--surface-invert);
   border: 1px solid rgba(15, 23, 42, 0.2);
   border-radius: var(--radius-sm);
   padding: 20px;
   font-family: var(--font-code);
   font-size: 0.88rem;
-  color: #f8fafc;
+  color: var(--text-on-invert);
   overflow-x: auto;
   line-height: 1.6;
   box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
@@ -457,90 +529,6 @@
 .code-string { color: #34d399; }
 .code-function { color: #c084fc; }
 .code-comment { color: #64748b; font-style: italic; }
-
-/* Tech Stack Ecosystem Node Cards */
-.tech-node-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-}
-
-.tech-node-card:hover,
-.tech-node-card.active {
-  border-color: var(--cyan-flutter);
-  background: rgba(2, 132, 199, 0.04);
-  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
-  transform: translateY(-2px);
-}
-
-.tech-node-icon {
-  font-size: 1.4rem;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.tech-node-name {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-}
-
-.tech-node-category {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-family: var(--font-code);
-}
-
-/* Pipeline Step Item Styles */
-.pipeline-step-item {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-}
-
-.pipeline-step-item:hover,
-.pipeline-step-item.active {
-  border-color: var(--cyan-flutter);
-  background: rgba(2, 132, 199, 0.05);
-  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.12);
-  transform: translateX(4px);
-}
-
-.pipeline-num {
-  font-family: var(--font-code);
-  font-weight: 800;
-  color: var(--cyan-flutter);
-  font-size: 0.9rem;
-}
-
-.pipeline-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--text-primary);
-}
-
-.pipeline-arrow {
-  color: var(--text-dim);
-  font-size: 1rem;
-}
-
-.pipeline-step-item.active .pipeline-arrow {
-  color: var(--cyan-flutter);
-}
-
 
 /* Direct Contact Channel Buttons — WhatsApp / Email / LinkedIn */
 .contact-channels {
@@ -602,3 +590,55 @@
   height: 1px;
   background: var(--border-subtle);
 }
+
+
+/* ==========================================================================
+   THEME & LANGUAGE TOGGLES
+   ========================================================================== */
+.pref-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--surface-inset);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.pref-btn:hover {
+  color: var(--cyan-flutter);
+  border-color: var(--cyan-flutter);
+  background: var(--cyan-glow);
+}
+
+.pref-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pref-btn-lang {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Sound: muted by default, so the button offers "turn on". */
+.pref-icon-sound-on { display: block; }
+.pref-icon-sound-off { display: none; }
+
+#sfx-mute-btn[aria-pressed="true"] .pref-icon-sound-on { display: none; }
+#sfx-mute-btn[aria-pressed="true"] .pref-icon-sound-off { display: block; }
+
+/* Show the icon for the theme the button switches TO. */
+.pref-icon-moon { display: block; }
+.pref-icon-sun { display: none; }
+
+[data-theme="dark"] .pref-icon-moon { display: none; }
+[data-theme="dark"] .pref-icon-sun { display: block; }

@@ -3,7 +3,7 @@
    Portfolio: Rozan Abu Alawar — Senior Flutter Developer
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
 
 :root {
   /* Cheerful Light & Vibrant Color Palette */
@@ -12,6 +12,18 @@
   --bg-surface-1: #f1f5f9;
   --bg-surface-2: #ffffff;
   --bg-surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* Surfaces that were previously hardcoded. Defined as tokens so the dark
+     theme can swap them; light values here are the original colors. */
+  --surface-card: #ffffff;
+  --surface-inset: #f8fafc;
+  --surface-invert: #0f172a;      /* dark chip/button on a light page */
+  --text-on-invert: #f8fafc;      /* text sitting on --surface-invert */
+  --text-on-accent: #ffffff;      /* text on a saturated accent fill */
+  --scrollbar-track: #e2e8f0;
+  --mesh-line: rgba(15, 23, 42, 0.02);
+  --phone-frame: #0f172a;
+  --phone-screen: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   
   /* Cheerful Modern Flutter & Coral Accents */
   --cyan-flutter: #0284c7;
@@ -61,6 +73,99 @@
   --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ==========================================================================
+   DARK THEME
+   Only the color tokens are redefined — every rule that uses them follows.
+   Accents are lightened rather than reused: #0284c7 on a dark ground drops
+   below readable contrast, so the dark theme moves to the 400-level blues.
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-dark: #0b1120;
+  --bg-charcoal: #0f172a;
+  --bg-surface-1: #131c2e;
+  --bg-surface-2: #1a2436;
+  --bg-surface-glass: rgba(26, 36, 54, 0.85);
+
+  --surface-card: #1a2436;
+  --surface-inset: #131c2e;
+  --surface-invert: #e2e8f0;
+  --text-on-invert: #0f172a;
+  --text-on-accent: #ffffff;
+  --scrollbar-track: #1a2436;
+  --mesh-line: rgba(226, 232, 240, 0.03);
+  --phone-frame: #020617;
+  --phone-screen: linear-gradient(180deg, #131c2e 0%, #0b1120 100%);
+
+  --cyan-flutter: #38bdf8;
+  --cyan-glow: rgba(56, 189, 248, 0.2);
+  --blue-flutter: #7dd3fc;
+  --blue-accent: #38bdf8;
+  --coral-accent: #fb7185;
+  --coral-glow: rgba(251, 113, 133, 0.2);
+  --violet-accent: #a78bfa;
+  --violet-glow: rgba(167, 139, 250, 0.18);
+
+  --emerald-success: #34d399;
+  --amber-alert: #fbbf24;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border-subtle: rgba(226, 232, 240, 0.1);
+  --border-active: rgba(56, 189, 248, 0.4);
+  --border-glass: rgba(226, 232, 240, 0.12);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.45);
+  --shadow-glow-cyan: 0 0 35px rgba(56, 189, 248, 0.2);
+  --shadow-glow-coral: 0 0 35px rgba(251, 113, 133, 0.2);
+}
+
+/* Respect the OS preference on a first visit, before any explicit choice.
+   Once the user picks a theme, [data-theme] is set and wins over this. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-dark: #0b1120;
+    --bg-charcoal: #0f172a;
+    --bg-surface-1: #131c2e;
+    --bg-surface-2: #1a2436;
+    --bg-surface-glass: rgba(26, 36, 54, 0.85);
+
+    --surface-card: #1a2436;
+    --surface-inset: #131c2e;
+    --surface-invert: #e2e8f0;
+    --text-on-invert: #0f172a;
+    --scrollbar-track: #1a2436;
+    --mesh-line: rgba(226, 232, 240, 0.03);
+    --phone-frame: #020617;
+    --phone-screen: linear-gradient(180deg, #131c2e 0%, #0b1120 100%);
+
+    --cyan-flutter: #38bdf8;
+    --cyan-glow: rgba(56, 189, 248, 0.2);
+    --blue-flutter: #7dd3fc;
+    --coral-accent: #fb7185;
+    --coral-glow: rgba(251, 113, 133, 0.2);
+    --violet-accent: #a78bfa;
+    --violet-glow: rgba(167, 139, 250, 0.18);
+    --emerald-success: #34d399;
+    --amber-alert: #fbbf24;
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border-subtle: rgba(226, 232, 240, 0.1);
+    --border-active: rgba(56, 189, 248, 0.4);
+    --border-glass: rgba(226, 232, 240, 0.12);
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.45);
+    --shadow-glow-cyan: 0 0 35px rgba(56, 189, 248, 0.2);
+    --shadow-glow-coral: 0 0 35px rgba(251, 113, 133, 0.2);
+  }
+}
+
 /* Reset & Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -72,6 +177,12 @@ html {
   scroll-behavior: smooth;
   color-scheme: light;
   font-size: 16px;
+}
+
+/* Native controls (scrollbars, form widgets, focus rings) follow the theme. */
+[data-theme="dark"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
 }
 
 body {
@@ -97,8 +208,8 @@ body {
     radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
     radial-gradient(circle at 85% 70%, rgba(244, 63, 94, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+    linear-gradient(var(--mesh-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mesh-line) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
 }
 
@@ -110,7 +221,7 @@ body {
   background: var(--bg-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.15);
+  background: var(--border-subtle);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
